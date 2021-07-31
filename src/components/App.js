@@ -1,7 +1,10 @@
 // import React, { useState, useEffect } from 'react';
 // import imagesAPI from '../api/images-api';
-
-// import Layout from './Layout';
+import { SwitchCase, Route } from 'react-router-dom';
+import Layout from './Layout';
+import AppBar from './AppBar';
+import HomeView from '../views/HomeViews';
+import MoviesView from '../views/MoviesViews';
 
 // import { animateScroll as scroll } from 'react-scroll';
 // import { ToastContainer } from 'react-toastify';
@@ -9,13 +12,19 @@
 
 // import styles from './App.module.scss';
 
-// export default function App() {
-//
+export default function App() {
+  return (
+    <Layout>
+      <AppBar />
+      <Route path="/" exact>
+        <HomeView />
+      </Route>
 
-//   return (
-//     <Layout>
-//
-//       <ToastContainer autoClose={3000} />
-//     </Layout>
-//   );
-// }
+      <Route path="/movies" exact>
+        <MoviesView />
+      </Route>
+
+      {/* <ToastContainer autoClose={3000} /> */}
+    </Layout>
+  );
+}

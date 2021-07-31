@@ -1,0 +1,29 @@
+nav {
+  // padding-top: 15px;
+  // padding-bottom: 15px;
+  border-bottom: 2px solid gray;
+}
+
+.link {
+  display: inline-block;
+  margin: 0;
+  padding: 15px 0;
+  text-decoration: none;
+  color: #2a363b;
+  font-size: 24px;
+  font-weight: 500;
+
+  // &:hover,
+  // &:focus {
+  //     color: red;
+  // }
+}
+
+.link:not(:last-child) {
+  margin-right: 20px;
+}
+
+.activeLink {
+  composes: link;
+  color: #2196f3;
+}
