@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import moviesAPI from '../../api/movies-api';
 
 import Searchbar from '../Searchbar';
@@ -62,6 +61,7 @@ export default function MoviesPage() {
     setPage(1);
     setError(null);
     setMoviesPageList([]);
+    // setId();
   };
 
   const loadMore = () => {

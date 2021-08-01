@@ -1,5 +1,5 @@
 import PageHeading from '../components/PageHeading';
-import HomePage from '../components/HomePage/HomePage';
+import HomePage from '../components/HomePage';
 
 export default function HomeView() {
   return (

@@ -9,11 +9,12 @@ import styles from './MoviesList.module.scss';
 export default function MoviesList({ movies }) {
   return (
     <ul className={styles.MoviesList}>
-      {movies.map(({ id, title }) => (
+      {movies.map(({ id, title, original_title }) => (
         <MoviesListItem
           key={id}
+          id={id}
           title={title}
-          // original_title={original_title}
+          original_title={original_title}
         />
       ))}
     </ul>
@@ -25,6 +26,5 @@ MoviesList.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
     }),
-  ).isRequired,
-  // onClickMovie: PropTypes.func.isRequired,
+  ),
 };

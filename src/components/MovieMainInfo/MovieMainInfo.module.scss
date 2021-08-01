@@ -1,0 +1,33 @@
+.MovieMainInfo {
+  display: flex;
+  padding-bottom: 15px;
+  border-bottom: 2px solid gray;
+}
+
+.MovieContent {
+  margin: 0 0 0 30px;
+}
+
+.ImageURL {
+  border-radius: 8px;
+}
+
+.MovieScore,
+.MovieTitleName,
+.MovieOverview {
+  margin-top: 0;
+}
+
+.MovieGenreList {
+  display: inline-flex;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.MovieGenreItem:not(:last-child) {
+  //   margin-left: 0;
+  margin-right: 8px;
+  border-right: 1px solid gray;
+  padding-right: 8px;
+}
