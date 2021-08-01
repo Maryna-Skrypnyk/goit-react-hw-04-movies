@@ -35,9 +35,13 @@ export default function App() {
           <MovieDetailsView />
         </Route>
 
-        <Route>
-          <NotFoundView />
+        <Route path="/">
+          <HomeView />
         </Route>
+
+        {/* <Route>
+          <NotFoundView />
+        </Route> */}
       </Switch>
 
       {/* <ToastContainer autoClose={3000} /> */}
