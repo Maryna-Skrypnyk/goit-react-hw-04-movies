@@ -1,79 +1,3 @@
-// import axios from 'axios';
-
-// axios.defaults.baseURL = 'https://developers.themoviedb.org/3/';
-// axios.defaults.params = {
-//   api_key: 'd0babcf2df0d52b515db9698a0e458bb',
-//   language: 'en-US',
-// };
-
-// const fetchSearchMovies = async (searchQuery, page) => {
-//   try {
-//     const config = {
-//       url: 'search/movie',
-//       params: {
-//         query: searchQuery,
-//         page,
-//       },
-//     };
-//     const { results } = await axios(config, searchQuery, page);
-//     console.log(results);
-//     return results;
-//   } catch (error) {
-//     return null;
-//   }
-// };
-
-// const fetchTrendingMovies = async page => {
-//   try {
-//     const config = {
-//       url: 'trending/movie/day',
-//       params: {
-//         page,
-//       },
-//     };
-//     const { results } = await axios(config, page);
-//     return results;
-//   } catch (error) {
-//     return null;
-//   }
-// };
-
-// const fetchMovieById = async movie_id => {
-//   try {
-//     const config = {
-//       url: `movie/${movie_id}`,
-//     };
-//     const { results } = await axios(config, movie_id);
-//     return results;
-//   } catch (error) {
-//     return null;
-//   }
-// };
-
-// const fetchActorMovie = async movie_id => {
-//   try {
-//     const config = {
-//       url: `movie/${movie_id}/credits`,
-//     };
-//     const { results } = await axios(config, movie_id);
-//     return results.cast;
-//   } catch (error) {
-//     return null;
-//   }
-// };
-
-// const fetchReviewMovie = async movie_id => {
-//   try {
-//     const config = {
-//       url: `movie/${movie_id}/reviews`,
-//     };
-//     const { results } = await axios(config, movie_id);
-//     return results.results;
-//   } catch (error) {
-//     return null;
-//   }
-// };
-
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = 'd0babcf2df0d52b515db9698a0e458bb';
 
@@ -112,7 +36,7 @@ const fetchMovieById = async movie_id => {
     return await fetch(urlMovieById)
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        // console.log(result);
         return result;
       });
   } catch (error) {
@@ -120,13 +44,13 @@ const fetchMovieById = async movie_id => {
   }
 };
 
-const fetchActorMovie = async movie_id => {
-  const urlActorMovie = `${BASE_URL}/movie/${movie_id}/credits?api_key=${API_KEY}&language=en-US`;
+const fetchCastMovie = async movie_id => {
+  const urlCastMovie = `${BASE_URL}/movie/${movie_id}/credits?api_key=${API_KEY}&language=en-US`;
   try {
-    return await fetch(urlActorMovie)
+    return await fetch(urlCastMovie)
       .then(response => response.json())
       .then(result => {
-        // console.log(result);
+        // console.log(result.cast);
         return result.cast;
       });
   } catch (error) {
@@ -141,7 +65,7 @@ const fetchReviewMovie = async movie_id => {
     return await fetch(urlReviewMovie)
       .then(response => response.json())
       .then(result => {
-        // console.log(result);
+        // console.log(result.results);
         return result.results;
       });
   } catch (error) {
@@ -153,7 +77,7 @@ const moviesAPI = {
   fetchSearchMovies,
   fetchTrendingMovies,
   fetchMovieById,
-  fetchActorMovie,
+  fetchCastMovie,
   fetchReviewMovie,
 };
 

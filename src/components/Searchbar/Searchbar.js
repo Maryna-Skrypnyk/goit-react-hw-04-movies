@@ -32,7 +32,7 @@ const Searchbar = ({ handleSubmit }) => {
       });
     }
     handleSubmit(searchQuery);
-    setSearchQuery('');
+    // setSearchQuery('');
   };
 
   return (

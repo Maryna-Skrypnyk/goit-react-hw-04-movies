@@ -1,0 +1,32 @@
+.MovieAddInfo {
+  margin-bottom: 20px;
+  padding: 15px 0;
+  border-bottom: 2px solid gray;
+}
+
+.AddInfo {
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.InfoList {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  display: inline-block;
+  margin: 0;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #2196f3;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.activeLink {
+  composes: link;
+  color: #2a363b;
+}

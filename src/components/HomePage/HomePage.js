@@ -9,8 +9,6 @@ import Error from '../Error';
 
 import { animateScroll as scroll } from 'react-scroll';
 
-import styles from './HomePage.module.scss';
-
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
   const [moviesPageList, setMoviesPageList] = useState([]);

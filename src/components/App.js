@@ -8,11 +8,8 @@ import MoviesView from '../views/MoviesView';
 import NotFoundView from '../views/NotFoundView';
 import MovieDetailsView from '../views/MovieDetailsView';
 
-// import { animateScroll as scroll } from 'react-scroll';
 // import { ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
-
-// import styles from './App.module.scss';
 
 export default function App() {
   return (
@@ -27,21 +24,17 @@ export default function App() {
           <MoviesView />
         </Route>
 
-        {/* <Route path="/:movieId">
-          <MovieDetailsView />
-        </Route> */}
-
         <Route path="/movies/:movieId">
           <MovieDetailsView />
         </Route>
 
-        <Route path="/">
-          <HomeView />
-        </Route>
-
         {/* <Route>
-          <NotFoundView />
+          <HomeView />
         </Route> */}
+
+        <Route>
+          <NotFoundView />
+        </Route>
       </Switch>
 
       {/* <ToastContainer autoClose={3000} /> */}

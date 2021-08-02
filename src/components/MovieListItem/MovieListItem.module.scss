@@ -1,0 +1,9 @@
+.MovieListItem:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.MovieLink {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}

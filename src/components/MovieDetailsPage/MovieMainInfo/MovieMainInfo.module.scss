@@ -1,7 +1,10 @@
 .MovieMainInfo {
-  display: flex;
   padding-bottom: 15px;
   border-bottom: 2px solid gray;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 }
 
 .MovieContent {
@@ -20,6 +23,7 @@
 
 .MovieGenreList {
   display: inline-flex;
+  flex-wrap: wrap;
   padding: 0;
   list-style: none;
   margin: 0;
