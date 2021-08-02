@@ -20,7 +20,7 @@ export default function Cast({ original_name, character, profile_path }) {
         height={283}
       />
       <h4 className={styles.Name}>{original_name}</h4>
-      <p className={styles.Character}>Character: {character}</p>
+      <p className={styles.Character}>{character}</p>
     </li>
   );
 }
