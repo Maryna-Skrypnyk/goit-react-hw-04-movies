@@ -20,12 +20,6 @@ export default function MovieAddInfo() {
           >
             Cast
           </NavLink>
-          <Route
-            path={`${path}/cast`}
-            // path="/movies/:movieId/cast"
-          >
-            <CastView />
-          </Route>
         </li>
         <li>
           <NavLink
@@ -36,11 +30,20 @@ export default function MovieAddInfo() {
             Reviews
           </NavLink>
         </li>
-
-        <Route path={`${path}/reviews`}>
-          <ReviewsView />
-        </Route>
       </ul>
+
+      <hr className={styles.Line} />
+
+      <Route
+        path={`${path}/cast`}
+        // path="/movies/:movieId/cast"
+      >
+        <CastView />
+      </Route>
+
+      <Route path={`${path}/reviews`}>
+        <ReviewsView />
+      </Route>
     </div>
   );
 }

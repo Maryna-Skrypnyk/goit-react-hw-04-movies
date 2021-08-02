@@ -1,7 +1,7 @@
 .MovieAddInfo {
   margin-bottom: 20px;
   padding: 15px 0;
-  border-bottom: 2px solid gray;
+  // border-bottom: 2px solid gray;
 }
 
 .AddInfo {
@@ -30,4 +30,8 @@
 .activeLink {
   composes: link;
   color: #2a363b;
+}
+
+.Line {
+  background-color: gray;
 }

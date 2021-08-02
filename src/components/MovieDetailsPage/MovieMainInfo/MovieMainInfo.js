@@ -8,52 +8,55 @@ export default function MovieMainInfo({ movie }) {
   const titleMovie =
     movie.title === '' || !movie.title ? movie.original_title : movie.title;
   return (
-    <div className={styles.MovieMainInfo}>
-      <div>
-        <img
-          src={
-            movie.poster_path
-              ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-              : noImage
-          }
-          alt={titleMovie}
-          className={styles.ImageURL}
-          width={300}
-          height={600}
-        />
-      </div>
-      <div className={styles.MovieContent}>
-        <h2 className={styles.MovieTitle}>
-          {titleMovie}
-          {movie.release_date && (
-            <span> ({movie.release_date.slice(0, 4)})</span>
+    <>
+      <div className={styles.MovieMainInfo}>
+        <div>
+          <img
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                : noImage
+            }
+            alt={titleMovie}
+            className={styles.ImageURL}
+            width={300}
+            height={450}
+          />
+        </div>
+        <div className={styles.MovieContent}>
+          <h2 className={styles.MovieTitle}>
+            {titleMovie}
+            {movie.release_date && (
+              <span> ({movie.release_date.slice(0, 4)})</span>
+            )}
+          </h2>
+          <p className={styles.MovieScore}>
+            User Score: {movie.popularity.toFixed(2)}%
+          </p>
+
+          {movie.overview && (
+            <>
+              <h3 className={styles.MovieTitleName}>Overview</h3>
+              <p className={styles.MovieOverview}>{movie.overview}</p>
+            </>
           )}
-        </h2>
-        <p className={styles.MovieScore}>
-          User Score: {movie.popularity.toFixed(2)}%
-        </p>
 
-        {movie.overview && (
-          <>
-            <h3 className={styles.MovieTitleName}>Overview</h3>
-            <p className={styles.MovieOverview}>{movie.overview}</p>
-          </>
-        )}
-
-        {movie.genres.length > 0 && (
-          <>
-            <h3 className={styles.MovieTitleName}>Genres</h3>
-            <ul className={styles.MovieGenreList}>
-              {movie.genres.map(genre => (
-                <li key={genre.id} className={styles.MovieGenreItem}>
-                  {genre.name}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+          {movie.genres.length > 0 && (
+            <>
+              <h3 className={styles.MovieTitleName}>Genres</h3>
+              <ul className={styles.MovieGenreList}>
+                {movie.genres.map(genre => (
+                  <li key={genre.id} className={styles.MovieGenreItem}>
+                    {genre.name}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
       </div>
-    </div>
+      <hr className={styles.Line} />
+    </>
   );
 }
 
