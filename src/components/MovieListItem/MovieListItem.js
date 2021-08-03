@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import styles from './MovieListItem.module.scss';
 
 export default function MoviesListItem({ id, title, original_title }) {
+  const location = useLocation();
+
   const titleMovie = title === '' || !title ? original_title : title;
 
   return (
@@ -13,7 +15,14 @@ export default function MoviesListItem({ id, title, original_title }) {
     // </li>
 
     <li className={styles.MovieListItem}>
-      <Link className={styles.MovieLink} to={`/movies/${id}`}>
+      <Link
+        className={styles.MovieLink}
+        // to={`/movies/${id}`}
+        to={{
+          pathname: `/movies/${id}`,
+          state: { from: location },
+        }}
+      >
         {titleMovie}
       </Link>
     </li>

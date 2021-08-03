@@ -20,7 +20,7 @@ export default function HomePage() {
     const fetchMoviesList = async () => {
       try {
         setLoading(true);
-        const moviesPageList = await moviesAPI.fetchSearchMovies(page);
+        const moviesPageList = await moviesAPI.fetchTrendingMovies(page);
         // console.log(moviesPageList);
         setMoviesPageList(moviesPageList);
         setMovies(prevMovies => [...prevMovies, ...moviesPageList]);

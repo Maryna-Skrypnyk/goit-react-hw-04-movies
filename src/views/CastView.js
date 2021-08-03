@@ -19,6 +19,9 @@ export default function CastView() {
     moviesAPI
       .fetchCastMovie(movieId)
       .then(cast => {
+        if (cast.length === 0) {
+          setError('We don`t have any cast for this movie.');
+        }
         setActors(cast);
         setLoading(false);
       })

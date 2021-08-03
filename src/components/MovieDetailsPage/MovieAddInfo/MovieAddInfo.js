@@ -1,4 +1,4 @@
-import { NavLink, useRouteMatch, Route } from 'react-router-dom';
+import { NavLink, useRouteMatch, Route, useLocation } from 'react-router-dom';
 
 import CastView from '../../../views/CastView';
 import ReviewsView from '../../../views/ReviewsView';
@@ -7,14 +7,20 @@ import styles from './MovieAddInfo.module.scss';
 
 export default function MovieAddInfo() {
   const { url, path } = useRouteMatch();
-  // console.log(url);
+  const location = useLocation();
+  console.log(location);
   return (
     <div className={styles.MovieAddInfo}>
       <p className={styles.AddInfo}>Additional Information</p>
       <ul className={styles.InfoList}>
         <li>
           <NavLink
-            to={{ pathname: `${url}/cast` }}
+            to={{
+              pathname: `${url}/cast`,
+              state: {
+                from: location.state ? location.state.from : '/',
+              },
+            }}
             className={styles.link}
             activeClassName={styles.activeLink}
           >
@@ -23,7 +29,12 @@ export default function MovieAddInfo() {
         </li>
         <li>
           <NavLink
-            to={{ pathname: `${url}/reviews` }}
+            to={{
+              pathname: `${url}/reviews`,
+              state: {
+                from: location.state ? location.state.from : '/',
+              },
+            }}
             className={styles.link}
             activeClassName={styles.activeLink}
           >

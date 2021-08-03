@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import moviesAPI from '../../api/movies-api';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import Searchbar from '../Searchbar';
 import MoviesList from '../MoviesList';
@@ -15,12 +16,23 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from './MoviesPage.module.scss';
 
 export default function MoviesPage() {
+  const history = useHistory();
+  const location = useLocation();
+
   const [movies, setMovies] = useState([]);
   const [moviesPageList, setMoviesPageList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (location.search === '') {
+      return;
+    }
+    const movieQuery = new URLSearchParams(location.search).get('movie');
+    setSearchQuery(movieQuery);
+  }, [location.search]);
 
   useEffect(() => {
     if (!searchQuery) {
@@ -54,6 +66,8 @@ export default function MoviesPage() {
   const handleSearchQuerySubmit = searchQuery => {
     setSearchQuery(searchQuery);
     updateStates();
+
+    history.push({ ...location, search: `movie=${searchQuery}` });
   };
 
   const updateStates = () => {
@@ -67,6 +81,7 @@ export default function MoviesPage() {
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
     scroll.scrollToBottom();
+    // history.push({ ...location, search: `movie=${searchQuery}` });
   };
 
   return (

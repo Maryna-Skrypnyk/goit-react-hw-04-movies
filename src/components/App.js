@@ -1,6 +1,6 @@
-// import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 // import imagesAPI from '../api/images-api';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
 import Layout from './Layout';
 import AppBar from './AppBar';
 import HomeView from '../views/HomeView';
@@ -9,6 +9,12 @@ import NotFoundView from '../views/NotFoundView';
 import MovieDetailsView from '../views/MovieDetailsView';
 
 export default function App() {
+  // let history = useHistory();
+
+  // useEffect(() => {
+  //   history.push('/');
+  // }, [history]);
+
   return (
     <>
       <AppBar />
@@ -18,12 +24,12 @@ export default function App() {
             <HomeView />
           </Route>
 
-          <Route path="/movies" exact>
-            <MoviesView />
-          </Route>
-
           <Route path="/movies/:movieId">
             <MovieDetailsView />
+          </Route>
+
+          <Route path="/movies">
+            <MoviesView />
           </Route>
 
           {/* <Route>
@@ -32,6 +38,7 @@ export default function App() {
 
           <Route>
             <NotFoundView />
+            {/* <Redirect to="/" /> */}
           </Route>
         </Switch>
       </Layout>

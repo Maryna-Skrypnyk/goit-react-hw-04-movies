@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 import moviesAPI from '../../api/movies-api';
 
 import MovieMainInfo from './MovieMainInfo';
@@ -12,6 +12,8 @@ import Error from '../Error';
 import styles from './MovieDetailsPage.module.scss';
 
 export default function MovieDetailsPage() {
+  const history = useHistory();
+  const location = useLocation();
   const { movieId } = useParams();
 
   const [movie, setMovie] = useState(null);
@@ -33,15 +35,15 @@ export default function MovieDetailsPage() {
       });
   }, [movieId]);
 
-  const onClickBack = () => {
-    console.log('back');
+  const goBack = () => {
+    history.push(location?.state?.from ?? '/');
   };
 
   return (
     <>
       {error && <Error errorContent={error} />}
       {loading && <LoaderSpinner />}
-      <ButtonIcon onClick={onClickBack} aria-label="Go back">
+      <ButtonIcon onClick={goBack} aria-label="Go back">
         <HiArrowLeft />
         <span className={styles.IconBtn}>Go back</span>
       </ButtonIcon>
