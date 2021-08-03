@@ -8,36 +8,33 @@ import MoviesView from '../views/MoviesView';
 import NotFoundView from '../views/NotFoundView';
 import MovieDetailsView from '../views/MovieDetailsView';
 
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-
 export default function App() {
   return (
-    <Layout>
+    <>
       <AppBar />
-      <Switch>
-        <Route path="/" exact>
-          <HomeView />
-        </Route>
+      <Layout>
+        <Switch>
+          <Route path="/" exact>
+            <HomeView />
+          </Route>
 
-        <Route path="/movies" exact>
-          <MoviesView />
-        </Route>
+          <Route path="/movies" exact>
+            <MoviesView />
+          </Route>
 
-        <Route path="/movies/:movieId">
-          <MovieDetailsView />
-        </Route>
+          <Route path="/movies/:movieId">
+            <MovieDetailsView />
+          </Route>
 
-        {/* <Route>
+          {/* <Route>
           <HomeView />
         </Route> */}
 
-        <Route>
-          <NotFoundView />
-        </Route>
-      </Switch>
-
-      {/* <ToastContainer autoClose={3000} /> */}
-    </Layout>
+          <Route>
+            <NotFoundView />
+          </Route>
+        </Switch>
+      </Layout>
+    </>
   );
 }

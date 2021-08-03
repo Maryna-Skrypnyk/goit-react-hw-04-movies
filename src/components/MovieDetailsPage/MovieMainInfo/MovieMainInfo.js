@@ -19,8 +19,8 @@ export default function MovieMainInfo({ movie }) {
             }
             alt={titleMovie}
             className={styles.ImageURL}
-            width={300}
-            height={450}
+            // width={300}
+            // height={450}
           />
         </div>
         <div className={styles.MovieContent}>

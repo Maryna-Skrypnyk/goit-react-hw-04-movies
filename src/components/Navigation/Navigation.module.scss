@@ -1,34 +1,44 @@
-nav {
-  // padding-top: 15px;
-  // padding-bottom: 15px;
-  // box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-  //   0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+.ContainerNav {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 
-  box-shadow: 0px 8px 7px -4px rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+}
+
+.NavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.NavListItem:not(:last-child) {
+  margin-right: 20px;
 }
 
 .link {
   display: inline-block;
   margin: 0;
-  padding: 15px 0 15px 15px;
+  padding: 15px 0 15px;
   text-decoration: none;
   color: #2a363b;
   font-size: 18px;
   font-weight: 500;
-
-  // &:hover,
-  // &:focus {
-  //     color: red;
-  // }
 }
-
-// .link:not(:last-child) {
-//   margin-right: 20px;
-// }
-
-// .link:first-child {
-//   padding-left: 15px;
-// }
 
 .activeLink {
   composes: link;

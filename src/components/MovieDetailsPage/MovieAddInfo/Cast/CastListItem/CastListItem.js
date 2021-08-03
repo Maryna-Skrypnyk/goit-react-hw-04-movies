@@ -16,8 +16,8 @@ export default function Cast({ original_name, character, profile_path }) {
         }
         alt={original_name}
         className={styles.PhotoCast}
-        width={200}
-        height={283}
+        // width={200}
+        // height={283}
       />
       <h4 className={styles.Name}>{original_name}</h4>
       <p className={styles.Character}>{character}</p>
