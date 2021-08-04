@@ -22,7 +22,7 @@ export default function MovieAddInfo() {
     <div className={styles.MovieAddInfo}>
       <p className={styles.AddInfo}>Additional Information</p>
       <ul className={styles.InfoList}>
-        <li>
+        <li className={styles.InfoListItem}>
           <NavLink
             to={{
               pathname: `${url}/cast`,
@@ -36,7 +36,7 @@ export default function MovieAddInfo() {
             Cast
           </NavLink>
         </li>
-        <li>
+        <li className={styles.InfoListItem}>
           <NavLink
             to={{
               pathname: `${url}/reviews`,

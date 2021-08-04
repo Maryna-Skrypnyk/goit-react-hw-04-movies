@@ -11,17 +11,27 @@
 }
 
 .InfoList {
+  display: flex;
   margin: 0;
   list-style: none;
   padding: 0;
 }
 
+.InfoListItem {
+  padding: 0 10px;
+}
+
+.InfoListItem:not(:last-child) {
+  border-right: 1px solid #2a363b;
+}
+
 .link {
   display: inline-block;
   margin: 0;
-  padding: 8px 0;
+  // padding: 5px 0;
   text-decoration: none;
-  color: #2196f3;
+  color: #2a363b;
+
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
@@ -29,7 +39,7 @@
 
 .activeLink {
   composes: link;
-  color: #2a363b;
+  color: #2196f3;
 }
 
 .Line {

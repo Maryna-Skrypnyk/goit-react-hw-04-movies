@@ -7,17 +7,18 @@ export default function BackTopScroll() {
       showUnder={160}
       style={{
         position: 'fixed',
-        bottom: 30,
-        right: 50,
+        bottom: 20,
+        right: 20,
         cursor: 'pointer',
         transitionDuration: '0.2s',
         transitionTimingFunction: 'linear',
         transitionDelay: '0s',
-        backgroundColor: '#2196f3',
+        // backgroundColor: '#2196f3',
+        backgroundColor: 'rgba(33,150,243,0.8)',
         borderRadius: '50%',
         padding: 15,
-        width: 48,
-        height: 48,
+        width: 44,
+        height: 44,
         scrollBehavior: 'smooth',
       }}
     >

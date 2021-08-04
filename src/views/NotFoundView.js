@@ -1,3 +1,16 @@
+import Error from '../components/Error';
+
 export default function NotFoundView() {
-  return <h1>404 Page is not found...</h1>;
+  return <Error errorContent="404 Page is not found..." />;
 }
+
+// import { Route } from 'react-router-dom';
+// import HomeView from '../views/HomeView.js';
+
+// export default function NotFoundView() {
+//   return (
+//     <Route path="/">
+//       <HomeView />
+//     </Route>
+//   );
+// }

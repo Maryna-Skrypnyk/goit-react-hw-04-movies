@@ -1,8 +1,20 @@
+.MovieDetails {
+  margin: 0 auto;
+}
+
 .MovieMainInfo {
   padding-bottom: 15px;
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) {
     display: flex;
+  }
+}
+
+.MovieTitle {
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    text-align: left;
   }
 }
 
@@ -15,7 +27,7 @@
 }
 
 .ImageURL {
-  display: inline-block;
+  display: block;
   min-width: 290px;
   max-width: 290px;
   // width: 290px;
