@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import { NavLink, useRouteMatch, Route, useLocation } from 'react-router-dom';
 
 import LoaderSpinner from '../../LoaderSpinner';
+import { animateScroll as scroll } from 'react-scroll';
 
 import styles from './MovieAddInfo.module.scss';
 
@@ -17,6 +18,7 @@ const ReviewsView = lazy(() =>
 export default function MovieAddInfo() {
   const { url, path } = useRouteMatch();
   const location = useLocation();
+  scroll.scrollToBottom();
 
   return (
     <div className={styles.MovieAddInfo}>

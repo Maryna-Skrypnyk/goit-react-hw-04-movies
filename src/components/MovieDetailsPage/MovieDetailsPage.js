@@ -8,7 +8,6 @@ import ButtonIcon from '../ButtonIcon';
 import { HiArrowLeft } from 'react-icons/hi';
 import LoaderSpinner from '../LoaderSpinner';
 import Error from '../Error';
-import { animateScroll as scroll } from 'react-scroll';
 
 import styles from './MovieDetailsPage.module.scss';
 
@@ -40,8 +39,6 @@ export default function MovieDetailsPage() {
   const onGoBack = () => {
     history.push(location?.state?.from ?? '/');
   };
-
-  scroll.scrollToBottom();
 
   return (
     <>
