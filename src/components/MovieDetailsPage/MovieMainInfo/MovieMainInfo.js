@@ -10,7 +10,7 @@ export default function MovieMainInfo({ movie }) {
   return (
     <>
       <div className={styles.MovieMainInfo}>
-        <div className={styles.MovieDetails}>
+        <div>
           <img
             src={
               movie.poster_path
