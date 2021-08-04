@@ -13,8 +13,6 @@ import { animateScroll as scroll } from 'react-scroll';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import styles from './MoviesPage.module.scss';
-
 export default function MoviesPage() {
   const history = useHistory();
   const location = useLocation();

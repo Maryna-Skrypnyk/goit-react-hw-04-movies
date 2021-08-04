@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://maryna-skrypnyk.github.io/goit-react-hw-04-movies",
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -19,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
+    "react-scroll-up": "^1.3.7",
     "react-toastify": "^7.0.4",
     "web-vitals": "^1.1.2"
   },

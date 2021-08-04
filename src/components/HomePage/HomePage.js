@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
 import moviesAPI from '../../api/movies-api';
-
 import MoviesList from '../MoviesList';
 import Button from '../Button';
 import LoaderSpinner from '../LoaderSpinner';
 import Error from '../Error';
-
 import { animateScroll as scroll } from 'react-scroll';
 
 export default function HomePage() {
@@ -55,7 +52,7 @@ export default function HomePage() {
       {moviesPageList.length > 19 && !loading && !error && (
         <Button contentBtn="Load More" onLoadMore={loadMore} />
       )}
-      {moviesPageList.length < 19 &&
+      {moviesPageList.length < 20 &&
         moviesPageList.length > 0 &&
         !loading &&
         !error && <Button disabled contentBtn="End" />}

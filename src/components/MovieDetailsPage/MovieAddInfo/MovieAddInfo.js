@@ -1,13 +1,26 @@
+import { lazy, Suspense } from 'react';
+
 import { NavLink, useRouteMatch, Route, useLocation } from 'react-router-dom';
 
-import CastView from '../../../views/CastView';
-import ReviewsView from '../../../views/ReviewsView';
+import LoaderSpinner from '../../LoaderSpinner';
+// import CastView from '../../../views/CastView';
+// import ReviewsView from '../../../views/ReviewsView';
 
 import styles from './MovieAddInfo.module.scss';
+
+const CastView = lazy(() =>
+  import('../../../views/CastView.js' /* webpackChunkName: "cast-view" */),
+);
+
+const ReviewsView = lazy(() =>
+  import('../../../views/ReviewsView' /* webpackChunkName: "reviews-view" */),
+);
 
 export default function MovieAddInfo() {
   const { url, path } = useRouteMatch();
   const location = useLocation();
+  // console.log(url);
+  // console.log(path);
   console.log(location);
   return (
     <div className={styles.MovieAddInfo}>
@@ -45,16 +58,18 @@ export default function MovieAddInfo() {
 
       <hr className={styles.Line} />
 
-      <Route
-        path={`${path}/cast`}
-        // path="/movies/:movieId/cast"
-      >
-        <CastView />
-      </Route>
+      <Suspense fallback={<LoaderSpinner />}>
+        <Route
+          path={`${path}/cast`}
+          // path="/movies/:movieId/cast"
+        >
+          <CastView />
+        </Route>
 
-      <Route path={`${path}/reviews`}>
-        <ReviewsView />
-      </Route>
+        <Route path={`${path}/reviews`}>
+          <ReviewsView />
+        </Route>
+      </Suspense>
     </div>
   );
 }

@@ -35,7 +35,7 @@ export default function MovieDetailsPage() {
       });
   }, [movieId]);
 
-  const goBack = () => {
+  const onGoBack = () => {
     history.push(location?.state?.from ?? '/');
   };
 
@@ -43,7 +43,7 @@ export default function MovieDetailsPage() {
     <>
       {error && <Error errorContent={error} />}
       {loading && <LoaderSpinner />}
-      <ButtonIcon onClick={goBack} aria-label="Go back">
+      <ButtonIcon onClick={onGoBack} aria-label="Go back">
         <HiArrowLeft />
         <span className={styles.IconBtn}>Go back</span>
       </ButtonIcon>

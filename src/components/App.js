@@ -1,12 +1,25 @@
-import { useEffect } from 'react';
-// import imagesAPI from '../api/images-api';
+import { lazy, Suspense, useEffect } from 'react';
 import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
+
 import Layout from './Layout';
 import AppBar from './AppBar';
-import HomeView from '../views/HomeView';
-import MoviesView from '../views/MoviesView';
-import NotFoundView from '../views/NotFoundView';
-import MovieDetailsView from '../views/MovieDetailsView';
+import LoaderSpinner from './LoaderSpinner';
+import BackTopScroll from './BackTopScroll';
+
+const HomeView = lazy(() =>
+  import('../views/HomeView.js' /* webpackChunkName: "home-view" */),
+);
+const MoviesView = lazy(() =>
+  import('../views/MoviesView.js' /* webpackChunkName: "movies-view" */),
+);
+const NotFoundView = lazy(() =>
+  import('../views/NotFoundView.js' /* webpackChunkName: "not-found-view" */),
+);
+const MovieDetailsView = lazy(() =>
+  import(
+    '../views/MovieDetailsView.js' /* webpackChunkName: "movie-details-view" */
+  ),
+);
 
 export default function App() {
   // let history = useHistory();
@@ -19,28 +32,30 @@ export default function App() {
     <>
       <AppBar />
       <Layout>
-        <Switch>
-          <Route path="/" exact>
-            <HomeView />
-          </Route>
+        <BackTopScroll />
+        <Suspense fallback={<LoaderSpinner />}>
+          <Switch>
+            <Route path="/" exact>
+              <HomeView />
+            </Route>
 
-          <Route path="/movies/:movieId">
-            <MovieDetailsView />
-          </Route>
+            <Route path="/movies/:movieId">
+              <MovieDetailsView />
+            </Route>
 
-          <Route path="/movies">
-            <MoviesView />
-          </Route>
+            <Route path="/movies">
+              <MoviesView />
+            </Route>
 
-          {/* <Route>
+            {/* <Route>
           <HomeView />
         </Route> */}
 
-          <Route>
-            <NotFoundView />
-            {/* <Redirect to="/" /> */}
-          </Route>
-        </Switch>
+            <Route>
+              <NotFoundView />
+            </Route>
+          </Switch>
+        </Suspense>
       </Layout>
     </>
   );

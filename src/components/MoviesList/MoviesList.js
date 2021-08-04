@@ -9,7 +9,7 @@ import styles from './MoviesList.module.scss';
 export default function MoviesList({ movies }) {
   return (
     <ul className={styles.MoviesList}>
-      {movies.map(({ id, title, original_title }) => (
+      {movies.map(({ id, original_title, title }) => (
         <MoviesListItem
           key={id}
           id={id}

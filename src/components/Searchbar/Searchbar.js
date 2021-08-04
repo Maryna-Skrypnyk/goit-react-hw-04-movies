@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
-// import ButtonIcon from '../ButtonIcon';
-// import { HiOutlineSearch } from 'react-icons/hi';
 import { toast, Zoom } from 'react-toastify';
-
 import styles from './Searchbar.module.scss';
 
 const Searchbar = ({ handleSubmit }) => {
@@ -19,20 +15,20 @@ const Searchbar = ({ handleSubmit }) => {
     e.preventDefault();
 
     if (searchQuery.trim() === '') {
-      return toast.warn('Enter your request', {
+      return toast.warn('Enter the movie title', {
         position: 'top-left',
         transition: Zoom,
         style: {
-          top: 100,
-          left: 237,
+          top: 90,
+          left: 0,
           textAlign: 'center',
-          width: 290,
+          width: 200,
           margin: '0 auto',
         },
       });
     }
     handleSubmit(searchQuery);
-    // setSearchQuery('');
+    setSearchQuery('');
   };
 
   return (
@@ -54,10 +50,6 @@ const Searchbar = ({ handleSubmit }) => {
       >
         Search
       </button>
-
-      {/* <ButtonIcon type="submit" aria-label="Search images">
-          <HiOutlineSearch />
-        </ButtonIcon> */}
     </form>
   );
 };
