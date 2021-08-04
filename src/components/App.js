@@ -47,10 +47,6 @@ export default function App() {
               <MoviesView />
             </Route>
 
-            {/* <Route>
-          <HomeView />
-        </Route> */}
-
             <Route>
               <NotFoundView />
             </Route>

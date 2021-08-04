@@ -18,7 +18,7 @@ export default function HomePage() {
       try {
         setLoading(true);
         const moviesPageList = await moviesAPI.fetchTrendingMovies(page);
-        // console.log(moviesPageList);
+
         setMoviesPageList(moviesPageList);
         setMovies(prevMovies => [...prevMovies, ...moviesPageList]);
         setLoading(false);

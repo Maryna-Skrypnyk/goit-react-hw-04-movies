@@ -14,6 +14,7 @@ import styles from './MovieDetailsPage.module.scss';
 export default function MovieDetailsPage() {
   const history = useHistory();
   const location = useLocation();
+
   const { movieId } = useParams();
 
   const [movie, setMovie] = useState(null);

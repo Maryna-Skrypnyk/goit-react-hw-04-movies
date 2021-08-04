@@ -79,7 +79,6 @@ export default function MoviesPage() {
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
     scroll.scrollToBottom();
-    // history.push({ ...location, search: `movie=${searchQuery}` });
   };
 
   return (

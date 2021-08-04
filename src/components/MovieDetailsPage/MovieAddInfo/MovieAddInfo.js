@@ -3,8 +3,6 @@ import { lazy, Suspense } from 'react';
 import { NavLink, useRouteMatch, Route, useLocation } from 'react-router-dom';
 
 import LoaderSpinner from '../../LoaderSpinner';
-// import CastView from '../../../views/CastView';
-// import ReviewsView from '../../../views/ReviewsView';
 
 import styles from './MovieAddInfo.module.scss';
 
@@ -19,9 +17,7 @@ const ReviewsView = lazy(() =>
 export default function MovieAddInfo() {
   const { url, path } = useRouteMatch();
   const location = useLocation();
-  // console.log(url);
-  // console.log(path);
-  console.log(location);
+
   return (
     <div className={styles.MovieAddInfo}>
       <p className={styles.AddInfo}>Additional Information</p>
