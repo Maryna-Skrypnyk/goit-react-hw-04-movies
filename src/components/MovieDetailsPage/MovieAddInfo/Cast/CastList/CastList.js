@@ -25,6 +25,10 @@ export default function CastList({ actors }) {
   );
 }
 
+CastList.defaultProps = {
+  actors: [],
+};
+
 CastList.propTypes = {
   actors: PropTypes.arrayOf(
     PropTypes.shape({

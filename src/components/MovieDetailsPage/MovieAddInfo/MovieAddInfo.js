@@ -19,8 +19,6 @@ export default function MovieAddInfo() {
   const { url, path } = useRouteMatch();
   const location = useLocation();
 
-  console.log(location);
-
   scroll.scrollToBottom();
 
   return (
@@ -60,10 +58,7 @@ export default function MovieAddInfo() {
       <hr className={styles.Line} />
 
       <Suspense fallback={<LoaderSpinner />}>
-        <Route
-          path={`${path}/cast`}
-          // path="/movies/:movieId/cast"
-        >
+        <Route path={`${path}/cast`}>
           <CastView />
         </Route>
 

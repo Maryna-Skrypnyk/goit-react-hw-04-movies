@@ -38,5 +38,4 @@ MoviesListItem.propTypes = {
   title: PropTypes.string,
   original_title: PropTypes.string,
   id: PropTypes.number.isRequired,
-  // onClickImage: PropTypes.func.isRequired,
 };

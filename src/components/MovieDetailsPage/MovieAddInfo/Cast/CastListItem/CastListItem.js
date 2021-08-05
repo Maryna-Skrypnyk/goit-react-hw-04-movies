@@ -31,7 +31,6 @@ Cast.defaultProps = {
 
 Cast.propTypes = {
   original_name: PropTypes.string.isRequired,
-  // credit_id: PropTypes.string.isRequired,
   character: PropTypes.string.isRequired,
   profile_path: PropTypes.string,
 };

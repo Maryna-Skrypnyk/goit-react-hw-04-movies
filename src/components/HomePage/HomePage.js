@@ -30,7 +30,6 @@ export default function HomePage() {
         setError('Whoops, something went wrong. Enter your request again');
       } finally {
         setLoading(false);
-        // this.scroll();
       }
     };
     fetchMoviesList();

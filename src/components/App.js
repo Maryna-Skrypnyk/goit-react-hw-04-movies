@@ -1,5 +1,5 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from './Layout';
 import AppBar from './AppBar';
@@ -22,12 +22,6 @@ const MovieDetailsView = lazy(() =>
 );
 
 export default function App() {
-  // let history = useHistory();
-
-  // useEffect(() => {
-  //   history.push('/');
-  // }, [history]);
-
   return (
     <>
       <AppBar />

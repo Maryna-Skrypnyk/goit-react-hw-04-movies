@@ -19,8 +19,6 @@ export default function MovieMainInfo({ movie }) {
             }
             alt={titleMovie}
             className={styles.ImageURL}
-            // width={300}
-            // height={450}
           />
         </div>
         <div className={styles.MovieContent}>
@@ -73,10 +71,14 @@ MovieMainInfo.defaultProps = {
 MovieMainInfo.propTypes = {
   title: PropTypes.string,
   original_title: PropTypes.string,
-  // id: PropTypes.number.isRequired,
   overview: PropTypes.string,
   poster_path: PropTypes.string,
   release_date: PropTypes.string,
-  genres: PropTypes.array,
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ),
   popularity: PropTypes.number,
 };
