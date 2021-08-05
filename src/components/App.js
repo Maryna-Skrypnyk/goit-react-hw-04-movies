@@ -49,6 +49,7 @@ export default function App() {
 
             <Route>
               <NotFoundView />
+              <Redirect to="/" />
             </Route>
           </Switch>
         </Suspense>

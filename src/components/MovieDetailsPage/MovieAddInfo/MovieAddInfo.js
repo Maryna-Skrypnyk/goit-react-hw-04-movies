@@ -18,6 +18,9 @@ const ReviewsView = lazy(() =>
 export default function MovieAddInfo() {
   const { url, path } = useRouteMatch();
   const location = useLocation();
+
+  console.log(location);
+
   scroll.scrollToBottom();
 
   return (
