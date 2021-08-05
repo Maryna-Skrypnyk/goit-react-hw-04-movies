@@ -11,7 +11,6 @@ const fetchSearchMovies = async (searchQuery, page) => {
     const { data } = await axios.get('/search/movie', {
       params: { query: searchQuery, page },
     });
-    // console.log(data.results);
     return data.results;
   } catch (error) {
     return [];
@@ -23,7 +22,6 @@ const fetchTrendingMovies = async page => {
     const { data } = await axios.get('/trending/movie/day', {
       params: { page },
     });
-    // console.log(data.results);
     return data.results;
   } catch (error) {
     return [];
@@ -33,7 +31,6 @@ const fetchTrendingMovies = async page => {
 const fetchMovieById = async movie_id => {
   try {
     const { data } = await axios.get(`/movie/${movie_id}`);
-    // console.log(data);
     return data;
   } catch (error) {
     return null;
@@ -43,7 +40,6 @@ const fetchMovieById = async movie_id => {
 const fetchCastMovie = async movie_id => {
   try {
     const { data } = await axios.get(`/movie/${movie_id}/credits`);
-    // console.log(data.cast);
     return data.cast;
   } catch (error) {
     return null;
@@ -53,7 +49,6 @@ const fetchCastMovie = async movie_id => {
 const fetchReviewMovie = async movie_id => {
   try {
     const { data } = await axios.get(`/movie/${movie_id}/reviews`);
-    // console.log(data.results);
     return data.results;
   } catch (error) {
     return null;

@@ -71,7 +71,6 @@ export default function MoviesPage() {
     setPage(1);
     setError(null);
     setMoviesPageList([]);
-    // setId();
   };
 
   const loadMore = () => {

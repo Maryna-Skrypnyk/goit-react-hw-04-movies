@@ -10,14 +10,9 @@ export default function MoviesListItem({ id, title, original_title }) {
   const titleMovie = title === '' || !title ? original_title : title;
 
   return (
-    // <li className={styles.MovieListItem}>
-    //   <Link to={`${url}/${id}`}>{titleMovie}</Link>
-    // </li>
-
     <li className={styles.MovieListItem}>
       <Link
         className={styles.MovieLink}
-        // to={`/movies/${id}`}
         to={{
           pathname: `/movies/${id}`,
           state: { from: location },

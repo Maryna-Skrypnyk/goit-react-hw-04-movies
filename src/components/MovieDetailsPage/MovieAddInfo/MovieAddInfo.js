@@ -1,6 +1,12 @@
 import { lazy, Suspense } from 'react';
 
-import { NavLink, useRouteMatch, Route, useLocation } from 'react-router-dom';
+import {
+  NavLink,
+  useRouteMatch,
+  Route,
+  useLocation,
+  Switch,
+} from 'react-router-dom';
 
 import LoaderSpinner from '../../LoaderSpinner';
 import { animateScroll as scroll } from 'react-scroll';
@@ -58,13 +64,15 @@ export default function MovieAddInfo() {
       <hr className={styles.Line} />
 
       <Suspense fallback={<LoaderSpinner />}>
-        <Route path={`${path}/cast`}>
-          <CastView />
-        </Route>
+        <Switch>
+          <Route path={`${path}/cast`}>
+            <CastView />
+          </Route>
 
-        <Route path={`${path}/reviews`}>
-          <ReviewsView />
-        </Route>
+          <Route path={`${path}/reviews`}>
+            <ReviewsView />
+          </Route>
+        </Switch>
       </Suspense>
     </div>
   );
