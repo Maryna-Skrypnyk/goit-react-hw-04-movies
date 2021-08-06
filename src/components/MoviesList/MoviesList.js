@@ -1,9 +1,6 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import MoviesListItem from '../MovieListItem/MovieListItem';
-
 import styles from './MoviesList.module.scss';
 
 export default function MoviesList({ movies }) {

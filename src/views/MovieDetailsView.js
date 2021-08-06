@@ -1,13 +1,3 @@
-// import MovieDetailsPage from '../components/MovieDetailsPage';
-
-// export default function MovieDetailsView() {
-//   return (
-//     <>
-//       <MovieDetailsPage />
-//     </>
-//   );
-// }
-
 import { useState, useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import moviesAPI from '../api/movies-api';
